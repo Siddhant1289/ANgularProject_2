@@ -1,0 +1,37 @@
+<p>FormGroup Demo</p>
+
+<form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="ename">Name : </label>
+    <input
+      type="text"
+      id="ename"
+      name="ename"
+      formControlName="ename"
+      required
+    />
+    <div
+      *ngIf="
+        !f.ename.errors?.['required'] &&
+        (f.ename.errors?.['dirty'] || f.ename.errors?.['touched'])
+      "
+    >
+      Name Is Required
+    </div>
+  </div>
+
+  <div>
+    <label for="salary">Salary : </label>
+    <input type="text" id="salary" name="salary" formControlName="salary" />
+  </div>
+  <div
+    *ngIf="
+      !f.salary.errors?.['required'] &&
+      (f.salary.errors?.['dirty'] || f.salary.errors?.['touched'])
+    "
+  >
+    Name Is Required
+  </div>
+
+  <input type="submit" value="Send Data" />
+</form>
