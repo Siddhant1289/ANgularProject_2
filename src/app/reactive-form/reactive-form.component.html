@@ -1,0 +1,10 @@
+<h3>Reactive Form Demo</h3>
+
+<input type="text" name="ename" [formControl]="ename" /><br /><br />
+
+<p>{{ ename.value }}</p>
+
+Source: <input type="text" name="source" [formControl]="source" /><br /><br />
+Destination:
+<input type="text" name="destination" [formControl]="destination" /><br /><br />
+<button (click)="copyValue()">send</button>
