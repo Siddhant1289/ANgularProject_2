@@ -12,7 +12,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 export class FormGroupComponent {
 
   reactiveForm = new  FormGroup({
-    ename: new FormControl('',Validators.required),
+    ename: new FormControl('',[Validators.required,Validators.minLength(5) ]),
     salary: new  FormControl('',Validators.required)
   });
 
